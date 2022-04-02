@@ -134,7 +134,7 @@ contract MyContract{
 ```
 
 
-## Variable: string
+## Address, Accounts, Msg-Object
 
 ```solidity
 //SPDX-License-Identifier: GPL-3.0
@@ -142,10 +142,24 @@ contract MyContract{
 pragma solidity >=0.5.0 <0.9.0;
 
 contract MyContract{
-    string public myName = "Harshvardhan";
 
-    function setMyFullname(string memory _myFull) public {   //<-- this argument is saved in memory not in storage variable
-        myName = _myFull;
+    uint public balanceRecieved;
+    
+    function recieveMoney() public payable { // Solidity compiler know that this function going to recieve money
+        balanceRecieved += msg.value;  // msg is global object in solidity
+    }
+
+    function getBalance() public view returns(uint) {
+        return address(this).balance;
+    }
+
+    function withDrawMoney() public {
+        address payable to = payable(msg.sender);
+        to.transfer(this.getBalance()); 
+    }
+
+    function withDrawMoneyTo(address payable _to) public {
+        _to.transfer(this.getBalance());
     }
 }
 ```
