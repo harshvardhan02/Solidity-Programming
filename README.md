@@ -18,16 +18,57 @@ contract MyContract {
 }
 ```
 
-## Usage/Examples
+## Unsigned Integers
 
 ```solidity
-import Component from 'my-project'
+//SPDX-License-Identifier: GPL-3.0
 
-function App() {
-  return <Component />
+pragma solidity >=0.5.0 <0.9.0;
+
+contract MyContract {
+    uint256 public myUint;   //<---- unsigned integers
+
+    function setMyUint(uint _myUint) public {
+        myUint = _myUint;
+    }
 }
 ```
 
+## Boolean
+
+```solidity
+//SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >=0.5.0 <0.9.0;
+
+contract MyContract{
+    bool public myName;    //<----- it will be default false always
+
+    function setMyBool(bool _myBool) public {
+        myName = _myBool;
+    }
+}
+```
+
+## uint8
+
+```solidity
+//SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >=0.5.0 <0.9.0;
+
+contract MyContract{
+    uint8 public myUint8;    //<----- 0 to 255
+
+    function incrementUint() public {
+        myUint8++;
+    }
+
+    function decrementUint() public {
+        myUint8--;
+    }
+}
+```
 
 ## Authors
 
