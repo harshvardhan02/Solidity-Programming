@@ -164,6 +164,43 @@ contract MyContract{
 }
 ```
 
+## Start, Stop, Pause and Destroy Contract
+
+```solidity
+//SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >=0.5.0 <0.9.0;
+
+contract MyContract{
+    address public owner;
+    bool paused;
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    function sendMoney() public payable {
+
+    }
+
+    function setPaused(bool _paused) public {
+        require(msg.sender == owner, "You cannot pause the cotract because you are not the owner");
+        paused = _paused;
+    }
+
+    function withdrwaAllMoney(address payable _to) public {
+        require(msg.sender == owner, "You are not the owner");
+        require(!paused, "contract paused");
+        _to.transfer(address(this).balance);
+    }
+
+    function destroySmartContract(address payable _to) public {
+        require(msg.sender == owner, "You are not the owner");
+        selfdestruct(_to);
+    }
+}
+```
+
 ## Authors
 
 - [Harshvardhan](https://instagram.com/hypersudo)
