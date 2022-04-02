@@ -8,7 +8,7 @@ Solidity is an object-oriented, high-level language for implementing smart contr
 
 ## Usage/Examples
 
-```javascript
+```solidity
 import Component from 'my-project'
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
 
 ## Usage/Examples
 
-```javascript
+```solidity
 import Component from 'my-project'
 
 function App() {
