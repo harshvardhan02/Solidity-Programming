@@ -6,13 +6,15 @@ Solidity is an object-oriented, high-level language for implementing smart contr
 ![Logo](https://miro.medium.com/max/651/1*PZv6C_X671fktg1t7CZvcg.png)
 
 
-## Usage/Examples
+## First Contract
 
 ```solidity
-import Component from 'my-project'
+//SPDX-License-Identifier: GPL-3.0
 
-function App() {
-  return <Component />
+pragma solidity >=0.5.0 <0.9.0;
+
+contract MyContract {
+    string public myString = "solidity";
 }
 ```
 
