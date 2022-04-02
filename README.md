@@ -201,6 +201,26 @@ contract MyContract{
 }
 ```
 
+## Mapping
+
+```solidity
+  mapping (KeyType => ValueType) mappingName;
+```
+| Variable Type | Key Type | Value Type |
+| :-------- | :------- | :------------- |
+| `int/uint` | ✅ | ✅ |
+| `string` | ✅ | ✅ |
+| `byte/bytes` | ✅ | ✅ |
+| `address` | ✅ | ✅ |
+| `struct` | ❌ | ✅ |
+| `mapping` | ❌ | ✅ |
+| `enum` | ❌ | ✅ |
+| `contract` | ❌ | ✅ |
+| `fixes sized array` | ✅ | ✅ |
+| `dynamic sized array` | ❌ | ✅ |
+| `multi dimentional array` | ❌ | ✅ |
+| `variable` | ❌ | ❌ |
+
 ## Authors
 
 - [Harshvardhan](https://instagram.com/hypersudo)
