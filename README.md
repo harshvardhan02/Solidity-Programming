@@ -221,6 +221,26 @@ contract MyContract{
 | `multi dimentional array` | ❌ | ✅ |
 | `variable` | ❌ | ❌ |
 
+```
+//SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >=0.5.0 <0.9.0;
+
+contract MyContract {
+    mapping(uint => string) public names;
+
+    constructor() {
+        names[101] = "Mumbai Indians";
+        names[102] = "Gujrat Titans";
+        names[103] = "Kolkata Kngiht Riders";
+    }
+
+    function setIPL(string memory _team) public {
+        names[0] = _team;
+    }
+}
+```
+
 ## Authors
 
 - [Harshvardhan](https://instagram.com/hypersudo)
